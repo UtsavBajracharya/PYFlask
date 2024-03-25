@@ -7,18 +7,25 @@
         <title>User Form</title>
     </head>
     <body>
-        <h1>User Form</h1>
+        <h1>Basic Calculator</h1>
         <form method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br><br>
-            <button type="submit">Submit</button>
+            <label for="Value1">Value1</label>
+            <input type="number" id="value1" name="value1"><br><br>
+            <label for="operator">Operator:</label>
+            <select name ="operator" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="/">/</option>
+            </select><br><br>
+            <label for = "value2">Value 2:</label>
+            <input type="number" id="value2" name="value2"><br><br>
+            <button type="submit">Calculate</button>
+            {% if result %}
+                <h2>Result:</h2>
+                <p>{{result}}</p>
+            {% endif %}    
         </form>
-        {% if user %}
-            <h2>User Data:</h2>
-            <p>Name: {{ user.name }}</p>
-            <p>Email: {{ user.email }}</p>
-        {% endif %}
+ 
     </body>
     </html>
